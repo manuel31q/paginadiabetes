@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NOSOTROS SOMOS</title>
+  <style>
+    /* 🎨 Colores y estilos generales */
+    :root {
+      --color-fondo: rgba(255, 255, 255, 0.9);
+      --color-primario: #1565c0;
+      --color-secundario: #42a5f5;
+      --color-texto: #333;
+      --color-titulo: #0d47a1;
+    }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      color: var(--color-texto);
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background-image: url('https://img.freepik.com/fotos-premium/cinco-exitos-altos-medicos-celebrando-trabajo-equipo-colaboracion-medica-apoyo-hospital_662214-407617.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+    }
+
+    header {
+      background: linear-gradient(90deg, var(--color-primario), var(--color-secundario));
+      color: white;
+      text-align: center;
+      padding: 25px 0;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2.5em;
+      letter-spacing: 3px;
+    }
+
+    main {
+      padding: 40px;
+      max-width: 900px;
+      margin: 50px auto;
+      background-color: var(--color-fondo);
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      backdrop-filter: blur(8px);
+    }
+
+    section {
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      color: var(--color-titulo);
+      border-left: 5px solid var(--color-secundario);
+      padding-left: 10px;
+    }
+
+    p, li {
+      font-size: 1.05em;
+    }
+
+    ul {
+      list-style-type: square;
+      margin-left: 25px;
+    }
+
+    .volver {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    button {
+      background-color: var(--color-secundario);
+      border: none;
+      color: white;
+      padding: 12px 25px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1.1em;
+      font-weight: bold;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background-color: var(--color-primario);
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>NOSOTROS SOMOS (CIDIME)</h1>
+  </header>
+
+  <main>
+    <section>
+      <h2>Propósito</h2>
+      <p>Nuestro propósito es brindar atención médica integral y humana que mejore la calidad de vida de cada paciente, garantizando bienestar, confianza y esperanza a través de un servicio profesional y ético.</p>
+    </section>
+
+    <section>
+      <h2>Visión</h2>
+      <p>Ser un hospital de referencia regional en atención médica, innovación y educación en salud, reconocido por su compromiso con la mejora continua y la satisfacción de sus pacientes.</p>
+    </section>
+
+    <section>
+      <h2>Objetivo</h2>
+      <ul>
+        <li>Garantizar una atención médica rápida, eficaz y segura.</li>
+        <li>Promover la prevención y educación para la salud en la comunidad.</li>
+        <li>Capacitar constantemente al personal médico y administrativo.</li>
+        <li>Implementar tecnología moderna para diagnósticos y tratamientos.</li>
+        <li>Mantener altos estándares de calidad y satisfacción del paciente.</li>
+      </ul>
+
+      <h3>Valores</h3>
+      <ul>
+        <li><strong>Humanidad:</strong> Tratar a cada paciente con respeto, empatía y comprensión.</li>
+        <li><strong>Ética:</strong> Actuar con honestidad, responsabilidad y profesionalismo.</li>
+        <li><strong>Innovación:</strong> Mejorar continuamente nuestros servicios y procesos.</li>
+        <li><strong>Trabajo en equipo:</strong> Colaborar para ofrecer atención integral.</li>
+        <li><strong>Compromiso social:</strong> Contribuir al bienestar de la comunidad.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Metas</h2>
+      <ul>
+        <li>Lograr que al menos el 80% de los pacientes controlen su glucosa dentro de los valores recomendados.</li>
+        <li>Reducir en un 20% las complicaciones oculares y renales en pacientes diabéticos en un plazo de 5 años.</li>
+        <li>Realizar campañas educativas trimestrales sobre prevención de diabetes.</li>
+        <li>Implementar programas comunitarios de ejercicio y alimentación saludable.</li>
+        <li>Alcanzar una cobertura del 90% en exámenes preventivos anuales.</li>
+      </ul>
+    </section>
+
+    <div class="volver">
+      <a href="index.html">
+        <button>Regresar</button>
+      </a>
+    </div>
+  </main>
+
+  <script>
+    // 🎨 Permite cambiar los colores fácilmente
+    function cambiarColor() {
+      document.documentElement.style.setProperty('--color-fondo', '#e3f2fd');
+      document.documentElement.style.setProperty('--color-primario', '#1565c0');
+      document.documentElement.style.setProperty('--color-secundario', '#42a5f5');
+      document.documentElement.style.setProperty('--color-titulo', '#0d47a1');
+    }
+  </script>
+</body>
+</html>

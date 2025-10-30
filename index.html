@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>HOSPITAL CUARTETOS-DIABETES</title>
+<style>
+/* ======== ESTILO GENERAL ======== */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('https://wallpaperaccess.com/full/1282794.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+/* ======== ANIMACIONES ======== */
+@keyframes aparecerSuave {
+    0% { opacity: 0; transform: translateY(60px) scale(0.95); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes respirar {
+    0%, 100% {
+        box-shadow: 0 0 25px rgba(0,0,0,0.4), 0 0 10px rgba(255,255,255,0.2);
+    }
+    50% {
+        box-shadow: 0 0 45px rgba(255,0,0,0.6), 0 0 25px rgba(255,255,255,0.5);
+    }
+}
+
+/* ======== CONTENEDOR CENTRAL ======== */
+main {
+    text-align: center;
+    background: rgba(255,255,255,0.25);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 70px 100px;
+    border-radius: 35px;
+    width: 95%;
+    max-width: 950px;
+    border: 1px solid rgba(255,255,255,0.4);
+    animation: aparecerSuave 1s ease-out, respirar 5s ease-in-out infinite;
+    box-shadow: 0 0 40px rgba(255,0,0,0.25);
+}
+
+/* ======== TÍTULO SUPER LLAMATIVO ======== */
+h1 {
+    font-size: 70px;
+    font-weight: 900;
+    background: linear-gradient(90deg, #ff0000, #ff7b00, #ff0000);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: moverColor 3s linear infinite;
+    text-shadow: 0 0 25px rgba(255,0,0,0.8), 0 0 40px rgba(255,150,0,0.6);
+    letter-spacing: 4px;
+    margin-bottom: 35px;
+    text-transform: uppercase;
+}
+
+@keyframes moverColor {
+    0% { background-position: 0%; }
+    100% { background-position: 200%; }
+}
+
+/* ======== IMAGEN ANIMADA (GIF) ======== */
+img {
+    border-radius: 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    width: 420px;
+    height: 300px;
+    transition: transform 0.4s ease;
+}
+img:hover {
+    transform: scale(1.05);
+}
+
+/* ======== FORMULARIO ======== */
+form {
+    background: rgba(255,255,255,0.25);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 30px 40px;
+    border-radius: 20px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+    border: 1px solid rgba(255,255,255,0.4);
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #000;
+    text-align: left;
+    font-size: 16px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 14px;
+    margin-top: 8px;
+    box-sizing: border-box;
+    border: 1px solid #aaa;
+    border-radius: 10px;
+    background-color: rgba(255,255,255,0.9);
+    font-size: 16px;
+}
+
+/* ======== BOTONES ======== */
+.botones {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+button {
+    background-color: #f20707;
+    color: white;
+    padding: 14px 30px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: transform 0.25s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+    background-color: #b80505;
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(255,0,0,0.6);
+}
+
+a {
+    text-decoration: none;
+}
+</style>
+</head>
+<body>
+
+<main>
+  <h1>CIDIME</h1>
+  <img src="https://www.imagui.com/i/cartoon-hospital-building-gif-cartoon-22770947.gif"
+       alt="Hospital animado">
+
+  <form id="dataForm">
+      <label for="name">Nombre:</label>
+      <input type="text" id="name" required>
+
+      <label for="doctor-to-treat">Doctor a tratar:</label>
+      <input list="doctores" id="doctor-to-treat" name="doctor-to-treat" required>
+      <datalist id="doctores">
+          <option value="Dr. Juan Pérez">
+          <option value="Dra. María González">
+          <option value="Dr. Luis Rodríguez">
+          <option value="Dra. Ana Martínez">
+      </datalist>
+
+      <label for="Diagnosis">Diagnóstico:</label>
+      <textarea id="Diagnosis" rows="5" required></textarea>
+
+      <div class="botones">
+          <button type="submit">Enviar Datos</button>
+          <a href="informacion.html"><button type="button">Saber Más...</button></a>
+      </div>
+  </form>
+</main>
+
+<script>
+const form = document.getElementById('dataForm');
+
+form.addEventListener('submit', async function(event) {
+    event.preventDefault();
+
+    const data = {
+        name: document.getElementById('name').value.trim(),
+        doctor: document.getElementById('doctor-to-treat').value.trim(),
+        message: document.getElementById('Diagnosis').value.trim()
+    };
+
+    // URL de tu Google Apps Script
+    const url = "https://script.google.com/macros/s/AKfycbz4ZZrgxuEysbyLeJImsBVvCTdGHxdS3d4ZRV8mc7cQeFCHSqDVazHEq0AxrwTgIPo/exec";
+
+    try {
+        await fetch(url, {
+            method: "POST",
+            body: JSON.stringify(data)
+        });
+
+        alert("✅ Datos enviados correctamente a Google Sheets");
+        form.reset();
+    } catch(err) {
+        alert("❌ Error al enviar datos: " + err);
+    }
+});
+</script>
+
+</body>
+</html>
